@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello! - WalkingLab</title>
+    <title>About - WalkingLab</title>
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -15,11 +15,36 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
+    <style>
+        .show {
+            display: block;
+            visibility: visible;
+        }
+
+        .hide {
+            display: none;
+            visibility: hidden;
+        }
+    </style>
+
     <script>
         $(document).ready(function () {
             document.getElementById("year").innerHTML = new Date().getFullYear();
             $("#contact").click(function () {
                 $('#modalContact').modal('show');
+            });
+
+            $(".zh").addClass("hide");
+            $(".en").addClass("show");
+            $("#flexSwitchCheckDefault").change(function () {
+                if (this.checked) {
+                    $(".en").removeClass("show").addClass("hide");
+                    $(".zh").removeClass("hide").addClass("show");
+                }
+                else {
+                    $(".zh").removeClass("show").addClass("hide");
+                    $(".en").removeClass("hide").addClass("show");
+                }
             });
         });
     </script>
@@ -40,6 +65,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="Resume.pdf" target="_blank">Resume</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Portfolio.html">Portfolio</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -47,48 +75,89 @@
     </div>
     <!--Container Starts-->
     <div class="container mt-nav">
-        <div class="ht-50"></div>
-
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">中文</label>
+        </div>
+        <div class="ht-20"></div>
         <div class="row">
             <div class="col-12 col-md-9">
-                <p class="title coral">Meng-Hsin Chen</p>
-                <p class="subtitle coral lite">Engineer + Developer</p>
+                <p class="title coral">
+                    <span class="en">Meng-Hsin Chen</span>
+                    <span class="zh">陳孟歆</span>
+                </p>
+                <p class="subtitle coral lite">
+                    <span class="en">Engineer + Developer</span>
+                    <span class="zh">整合 + 開發工程師</span>
+                </p>
                 <p class="lead">
-                    I'm an integration engineer based in Taiwan.<br />
-                    I'm a marathon finisher.<br />
-                    And I self-study programming.
+                    <span class="en">
+                        I'm an integration engineer based in Taiwan.<br />
+                        I'm a marathon finisher.<br />
+                        And I self-study programming.
+                    </span>
+                    <span class="zh">
+                        我叫陳孟歆，目前住在桃園，住過瑞典一年，跑過一場馬拉松，我是一名整合工程師。<br />
+                        我希望跨出舒適圈，於是基於熱情自學程式。<br />
+                        從硬體跨足軟體，享受呈現畫面，也樂於實踐技術，前端與後端均有涉略。
+                    </span>
                 </p>
                 <span class="short-line"></span>
                 <p>
-                    <a id="contact" class="btn btn-outline-dark">Contact Me >></a>
-                    <a href="Resume.pdf" target="_blank" class="btn btn-outline-danger">My Resume >></a>
+                    <a id="contact" class="btn btn-outline-dark">
+                        <span class="en">Contact Me >></span>
+                        <span class="zh">聯絡我 >></span>
+                    </a>
+                    <a href="Resume.pdf" target="_blank" class="btn btn-outline-danger">
+                        <span class="en">My Resume >></span>
+                        <span class="zh">履歷表 >></span>
+                    </a>
                 </p>
             </div>
             <div class="col-12 col-md-3 text-center">
                 <p>
-                    <img src="images/about.jpg" class="img-rounded" width="200" />
+                    <img src="images/about.jpg" class="circle" width="200" />
                 </p>
                 <p>
-                    <a href="#Expertise" class="badge rounded-pill bg-light text-dark">Expertise</a> /
-                    <a href="#Experience" class="badge rounded-pill bg-light text-dark">Experience</a> /
-                    <a href="#Education" class="badge rounded-pill bg-light text-dark">Education</a>
+                    <a href="#Expertise" class="badge rounded-pill bg-light text-dark">
+                        <span class="en">Expertise</span>
+                        <span class="zh">專業</span>
+                    </a> /
+                    <a href="#Experience" class="badge rounded-pill bg-light text-dark">
+                        <span class="en">Experience</span>
+                        <span class="zh">經歷</span>
+                    </a> /
+                    <a href="#Education" class="badge rounded-pill bg-light text-dark">
+                        <span class="en">Education</span>
+                        <span class="zh">學歷</span>
+                    </a>
                 </p>
             </div>
         </div>
 
         <div id="Expertise" class="example-title">
-            <h2>Expertise</h2>
-            <p>What I've learned and what I've been learning.</p>
+            <h2>
+                <span class="en">Expertise</span>
+                <span class="zh">專業</span>
+            </h2>
+            <p>
+                <span class="en">What I've learned and what I've been learning.</span>
+                <span class="zh"></span>
+            </p>
         </div>
 
         <div class="row row-cols-1 row-cols-md-3">
             <div class="col">
                 <div class="card h-100">
                     <div class="card-header logo text-center">
-                        Skills
+                        <span class="en">Skills</span>
+                        <span class="zh">技能</span>
                     </div>
                     <div class="card-body">
-                        <h6 class="card-title coral">Programming</h6>
+                        <h6 class="card-title coral">
+                            <span class="en">Programming</span>
+                            <span class="zh">程式語言</span>
+                        </h6>
                         <ul>
                             <li>C#</li>
                             <li>ASP.NET</li>
@@ -97,7 +166,10 @@
                             <li>HTML</li>
                             <li>CSS</li>
                         </ul>
-                        <h6 class="card-title coral">Software</h6>
+                        <h6 class="card-title coral">
+                            <span class="en">Software</span>
+                            <span class="zh">軟體應用</span>
+                        </h6>
                         <ul>
                             <li>Visual Studio</li>
                             <li>MS Excel & VBA</li>
@@ -109,10 +181,14 @@
             <div class="col">
                 <div class="card h-100">
                     <div class="card-header logo text-center">
-                        Knowledge
+                        <span class="en">Knowledge</span>
+                        <span class="zh">知識</span>
                     </div>
                     <div class="card-body">
-                        <h6 class="card-title coral">Information Technology</h6>
+                        <h6 class="card-title coral">
+                            <span class="en">Information Technology</span>
+                            <span class="zh">資訊科學</span>
+                        </h6>
                         <ul>
                             <li>SQL</li>
                             <li>RDBMS</li>
@@ -120,7 +196,10 @@
                         </ul>
                         <p class="card-text">
                         </p>
-                        <h6 class="card-title coral">Semiconductor Industrial</h6>
+                        <h6 class="card-title coral">
+                            <span class="en">Semiconductor Industrial</span>
+                            <span class="zh">半導體工程</span>
+                        </h6>
                         <ul>
                             <li>Advanced Packaging</li>
                             <li>Defect Analysis</li>
@@ -133,10 +212,14 @@
             <div class="col">
                 <div class="card h-100">
                     <div class="card-header logo text-center">
-                        Certification
+                        <span class="en">Certification</span>
+                        <span class="zh">認證</span>
                     </div>
                     <div class="card-body">
-                        <h6 class="card-title coral">Language</h6>
+                        <h6 class="card-title coral">
+                            <span class="en">Language</span>
+                            <span class="zh">語言</span>
+                        </h6>
                         <h6 class="card-title">TOEFL iBT</h6>
                         <ul>
                             <li>112</li>
@@ -153,37 +236,63 @@
         <div class="container-fluid">
             <div id="Experience" class="row example-split justify-content-md-center">
                 <div class="col-md-12 example-title">
-                    <h2>Experience</h2>
-                    <p>Grow to become bigger than my problems.</p>
+                    <h2>
+                        <span class="en">Experience</span>
+                        <span class="zh">經歷</span>
+                    </h2>
+                    <p>
+                        <span class="en">Grow to become bigger than my problems.</span>
+                        <span class="zh"></span>
+                    </p>
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-1">
                     <div>
-                        <h3>TSMC</h3>
-                        <p>
-                            When talking about a Process Integration Engineer in the semiconductor industry, we think of someone who connects the customer and the foundry of manufacturing. My job is to deliver products to the customers with well-defined procedures. By self-studying programming and developed applications for internal usage, working smart is coming along with working hard.
+                        <h3>
+                            <span class="en">TSMC</span>
+                            <span class="zh">台積電</span>
+                        </h3>
+                        <p class="en">
+                            <span class="en">
+                                When talking about a Process Integration Engineer in the semiconductor industry, we think of someone who connects the customer and the foundry of manufacturing. My job is to deliver products to the customers with well-defined procedures. By self-studying programming and developed applications for internal usage, working smart is coming along with working hard.
+                            </span>
+                            <span class="zh">
+                                製程整合工程師是連結客戶與工廠之間的橋樑，將客戶需求傳達給工廠，並將製程與服務回應給客戶。<br />
+                                我們維繫良率，把控產線的順暢與品質。<br />
+                                經由自學程式語言，開發系統，提供內部分析需求，提高生產力，我們不再只是 Work Hard，更追求 Work Smart。
+                            </span>
                         </p>
                         <div class="ht-20"></div>
                     </div>
                     <ul class="timeline timeline-split">
                         <li class="timeline-item">
                             <div class="timeline-info">
-                                <span>Apr 2020 - Present</span>
+                                <span class="en">Apr 2020 - Present</span>
+                                <span class="zh">Apr 2020 - 在職中</span>
                             </div>
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h4 class="timeline-title">System Integration Engineer</h4>
+                                <h4 class="timeline-title">
+                                    <span class="en">System Integration Engineer</span>
+                                    <span class="zh">系統整合工程師</span>
+                                </h4>
                                 <ul>
                                     <li>
-                                        Used SQL(Oracle)/NoSQL(MongoDB) Database API to develop web applications based on ASP.NET framework for data analysis.
-                                        Developed Windows programs using C#, VBA, and SQL for productivity enhancement.
+                                        <span class="en">Used SQL(Oracle)/NoSQL(MongoDB) Database API to develop web applications based on ASP.NET framework for data analysis.</span>
+                                        <span class="zh">使用 SQL(Oracle)/NoSQL(MongoDB) Database API 開發利用 ASP.NET framework 技術架設的網頁，進行資料分析。</span>
                                     </li>
-                                    <li>Communicated with internal users to define requirements, design/deploy/implement/test system, and continuous improvements.</li>
                                     <li>
-                                        Supervised a team of 5 engineering technicians to handle backend customer requests of new product design and satisfied
-                                        customer special demand.
+                                        <span class="en">Developed Windows programs using C#, VBA, and SQL for productivity enhancement.</span>
+                                        <span class="zh">以 C#、VBA 和 SQL 開發 WinForms，用於生產力提升應用。</span>
+                                    </li>
+                                    <li>
+                                        <span class="en">Communicated with internal users to define requirements, design/deploy/implement/test system, and continuous improvements.</span>
+                                        <span class="zh">與內部使用者溝通，定義需求，設計、佈署、測試系統，並持續精進。</span>
+                                    </li>
+                                    <li>
+                                        <span class="en">Supervised a team of 5 engineering technicians to handle backend customer requests of new product design and satisfied customer special demand.</span>
+                                        <span class="zh">帶領技術員處理後段客戶需求，實現新產品設計。</span>
                                     </li>
                                 </ul>
-
                             </div>
                         </li>
                         <li class="timeline-item">
@@ -192,11 +301,23 @@
                             </div>
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h4 class="timeline-title">Technology Core Team Engineer</h4>
+                                <h4 class="timeline-title">
+                                    <span class="en">Technology Core Team Engineer</span>
+                                    <span class="zh">技術核心工程師</span>
+                                </h4>
                                 <ul>
-                                    <li>Defined the 1st process flow auto-creation SOP for TSMC 3DFabric.</li>
-                                    <li>Defined bumping/assembly technology infrastructure for 3D IC roadmap. (Division Stop & Fix Award Winner)</li>
-                                    <li>Handled process change with perfect quality management, considering interactions between technologies and processes.</li>
+                                    <li>
+                                        <span class="en">Defined the 1st process flow auto-creation SOP for TSMC 3DFabric.</span>
+                                        <span class="zh">定義第一個 TSMC 3D IC 先進封裝自動化製程流程。</span>
+                                    </li>
+                                    <li>
+                                        <span class="en">Defined bumping/assembly technology infrastructure for 3D IC roadmap. (Division Stop & Fix Award Winner)</span>
+                                        <span class="zh">定義 3D IC bumping/assembly 技術基礎建設與展望。</span>
+                                    </li>
+                                    <li>
+                                        <span class="en">Handled process change with perfect quality management, considering interactions between technologies and processes.</span>
+                                        <span class="zh">在考慮不同技術條件下，結合品質管理，掌握製程異動流程。</span>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -206,11 +327,23 @@
                             </div>
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h4 class="timeline-title">Process Integration Engineer</h4>
+                                <h4 class="timeline-title">
+                                    <span class="en">Process Integration Engineer</span>
+                                    <span class="zh">製程整合工程師</span>
+                                </h4>
                                 <ul>
-                                    <li>Developed InFO along with SoC throughout N16/N10/N7/N5 technology. (Suggestion Committee Award Winner)</li>
-                                    <li>Saved expense cost by constructing preserving methodologies of goods. (Division Contribution Award)</li>
-                                    <li>Collaborated with customers on inline issue resolution and yield improvement.</li>
+                                    <li>
+                                        <span class="en">Developed InFO along with SoC throughout N16/N10/N7/N5 technology. (Suggestion Committee Award Winner)</span>
+                                        <span class="zh">發展並研究用於可攜式電子產品的 InFO 技術。</span>
+                                    </li>
+                                    <li>
+                                        <span class="en">Saved expense cost by constructing preserving methodologies of goods. (Division Contribution Award)</span>
+                                        <span class="zh">缺陷分析與電性分析，改善製程流程，降低製造成本。</span>
+                                    </li>
+                                    <li>
+                                        <span class="en">Collaborated with customers on inline issue resolution and yield improvement.</span>
+                                        <span class="zh">與客戶合作，解決製程問題，提升產品良率。</span>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -220,18 +353,28 @@
 
             <div id="Education" class="row example-centered justify-content-md-center">
                 <div class="col-md-12 example-title">
-                    <h2>Education</h2>
-                    <p>No one is born with it.</p>
+                    <h2>
+                        <span class="en">Education</span>
+                        <span class="zh">學歷</span>
+                    </h2>
+                    <p>
+                        <span class="en">No one is born with it.</span>
+                        <span class="zh"></span>
+                    </p>
                 </div>
-                <div class="">
+                <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-1">
                     <ul class="timeline timeline-centered">
                         <li class="timeline-item">
                             <div class="timeline-info">
-                                <span>...Ever after</span>
+                                <span class="en">...Ever after</span>
+                                <span class="zh">...從此之後</span>
                             </div>
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h3 class="timeline-title">Self Learner</h3>
+                                <h4 class="timeline-title">
+                                    <span class="en">Self Learner</span>
+                                    <span class="zh">自學者</span>
+                                </h4>
                                 <p><span class="material-icons">mood</span></p>
                             </div>
                         </li>
@@ -239,7 +382,10 @@
                             <div class="timeline-info"></div>
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h2 class="timeline-title">Master</h2>
+                                <h2 class="timeline-title">
+                                    <span class="en">Master</span>
+                                    <span class="zh">碩士</span>
+                                </h2>
                             </div>
                         </li>
                         <li class="timeline-item">
@@ -248,9 +394,13 @@
                             </div>
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h3 class="timeline-title">Master's Degree</h3>
+                                <h4 class="timeline-title">
+                                    <span class="en">Master's Degree</span>
+                                    <span class="zh">碩士學位</span>
+                                </h4>
                                 <p>
-                                    MSc in Materials Science and Engineering, National Taiwan University.
+                                    <span class="en">MSc in Materials Science and Engineering, National Taiwan University.</span>
+                                    <span class="zh">國立台灣大學材料科學與工程學研究所</span>
                                 </p>
                             </div>
                         </li>
@@ -260,9 +410,13 @@
                             </div>
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h3 class="timeline-title">Exchange Program</h3>
+                                <h4 class="timeline-title">
+                                    <span class="en">Exchange Program</span>
+                                    <span class="zh">交換學生</span>
+                                </h4>
                                 <p>
-                                    Institute of Technology, Linköping University. (Linköping, SE)
+                                    <span class="en">Institute of Technology, Linköping University. (Linköping, SE)</span>
+                                    <span class="zh">瑞典林雪平大學科技學院</span>
                                 </p>
                             </div>
                         </li>
@@ -272,9 +426,13 @@
                             </div>
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h3 class="timeline-title">Thesis Defense</h3>
+                                <h4 class="timeline-title">
+                                    <span class="en">Thesis Defense</span>
+                                    <span class="zh">論文口試</span>
+                                </h4>
                                 <p>
-                                    Thesis: Interfacial Reactions Between Copper Substrate and Lead-Free Solder for 3D IC Applications.
+                                    <span class="en">Thesis: Interfacial Reactions Between Copper Substrate and Lead-Free Solder for 3D IC Applications.</span>
+                                    <span class="zh">3D IC 封裝中銅基材與無鉛銲料接點之介面反應</span>
                                 </p>
                             </div>
                         </li>
@@ -284,9 +442,13 @@
                             </div>
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h3 class="timeline-title">Poster</h3>
+                                <h4 class="timeline-title">
+                                    <span class="en">Poster</span>
+                                    <span class="zh">海報發表</span>
+                                </h4>
                                 <p>
-                                    Material Research Society-Taiwan (MRS-T). (Yunlin, TW)
+                                    <span class="en">Material Research Society-Taiwan (MRS-T). (Yunlin, TW)</span>
+                                    <span class="zh">中國材料科學學會年會</span>
                                 </p>
                             </div>
                         </li>
@@ -296,7 +458,10 @@
                             </div>
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h3 class="timeline-title">Session Presenter</h3>
+                                <h4 class="timeline-title">
+                                    <span class="en">Session Presenter</span>
+                                    <span class="zh">口頭發表</span>
+                                </h4>
                                 <p>
                                     TMS 2012 Annual Meeting & Exhibition - Effects of Ultrafine Joints and Alloy/microstructure Relationships Session. (Orlando, FL)
                                 </p>
@@ -308,9 +473,17 @@
                             </div>
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h3 class="timeline-title">Graduate Research Assistant</h3>
+                                <h4 class="timeline-title">
+                                    <span class="en">Graduate Research Assistant</span>
+                                    <span class="zh">碩士研究助理</span>
+                                </h4>
                                 <p>
-                                    Advanced Chip Packaging Laboratory (ACPL), Advisor: Prof. C. Robert Kao.
+                                    <a href="http://www.mse.ntu.edu.tw/~mml/" target="_blank">
+                                        <span class="en">Advanced Chip Packaging Laboratory (ACPL)</span>
+                                        <span class="zh">覆晶封裝實驗室</span>
+                                    </a>
+                                    <span class="en">, Advisor: Prof. C. Robert Kao.</span>
+                                    <span class="zh">（指導教授：高振宏特聘教授）</span>
                                 </p>
                             </div>
                         </li>
@@ -318,7 +491,10 @@
                             <div class="timeline-info"></div>
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h2 class="timeline-title">Bachelor</h2>
+                                <h2 class="timeline-title">
+                                    <span class="en">Bachelor</span>
+                                    <span class="zh">大學</span>
+                                </h2>
                             </div>
                         </li>
                         <li class="timeline-item">
@@ -327,9 +503,13 @@
                             </div>
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h3 class="timeline-title">Bachelor's Degree</h3>
+                                <h4 class="timeline-title">
+                                    <span class="en">Bachelor's Degree</span>
+                                    <span class="zh">學士學位</span>
+                                </h4>
                                 <p>
-                                    BS in Materials Science and Engineering, National Taiwan University.
+                                    <span class="en">BS in Materials Science and Engineering, National Taiwan University.</span>
+                                    <span class="zh">國立台灣大學材料科學與工程學系</span>
                                 </p>
                             </div>
                         </li>
@@ -339,9 +519,13 @@
                             </div>
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h3 class="timeline-title">Visiting Student</h3>
+                                <h4 class="timeline-title">
+                                    <span class="en">Visiting Student</span>
+                                    <span class="zh">訪問學生</span>
+                                </h4>
                                 <p>
-                                    Hertford College, University of Oxford. (Oxford, UK)
+                                    <span class="en">Hertford College, University of Oxford. (Oxford, UK)</span>
+                                    <span class="zh">英國牛津大學哈特福學院</span>
                                 </p>
                             </div>
                         </li>
@@ -351,9 +535,13 @@
                             </div>
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h3 class="timeline-title">College Student</h3>
+                                <h4 class="timeline-title en">
+                                    <span class="en">College Student</span>
+                                    <span class="zh">進入大學</span>
+                                </h4>
                                 <p>
-                                    Department of Materials Science and Engineering, National Taiwan University. (Taipei, TW)
+                                    <span class="en">Department of Materials Science and Engineering, National Taiwan University. (Taipei, TW)</span>
+                                    <span class="zh">國立台灣大學材料科學與工程學系</span>
                                 </p>
                             </div>
                         </li>
@@ -363,9 +551,13 @@
                             </div>
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h3 class="timeline-title">Born in Taipei</h3>
+                                <h4 class="timeline-title">
+                                    <span class="en">Born in Taipei</span>
+                                    <span class="zh">出生於台北</span>
+                                </h4>
                                 <p>
-                                    Hi there!
+                                    <span class="en">Hi there!</span>
+                                    <span class="zh">哈囉！</span>
                                 </p>
                             </div>
                         </li>
@@ -385,7 +577,7 @@
                 </div>
                 <div class="modal-body text-center">
                     <p>
-                        <img src="images/about.jpg" class="img-rounded img-h200" />
+                        <img src="images/about.jpg" class="circle" width="200" />
                     </p>
                     <p>Find me via</p>
                     <p>
@@ -405,11 +597,11 @@
             <span id="year"></span> &copy; <a href="index.html"><span class="logo">WALKING<span class="lite">LAB</span></span></a>
         </p>
         <p class="text-center">
-            <a href="mailto:walkproudly@gmail.com"><img src="images/mail.png" class="img-rounded img-footer" /></a>
-            <a href="https://www.linkedin.com/in/meng-hsin-chen/" target="_blank"><img src="images/linkedin.png" class="img-rounded img-footer" /></a>
-            <a href="https://github.com/menghsinchen" target="_blank"><img src="images/github.png" class="img-rounded img-footer" /></a>
-            <a href="https://www.instagram.com/walkingallery/" target="_blank"><img src="images/instagram.png" class="img-rounded img-footer" /></a>
-            <a href="https://www.facebook.com/menghsinchen" target="_blank"><img src="images/facebook.png" class="img-rounded img-footer" /></a>
+            <a href="mailto:walkproudly@gmail.com"><img src="images/mail.png" class="circle" /></a>
+            <a href="https://www.linkedin.com/in/meng-hsin-chen/" target="_blank"><img src="images/linkedin.png" class="circle" /></a>
+            <a href="https://github.com/menghsinchen" target="_blank"><img src="images/github.png" class="circle" /></a>
+            <a href="https://www.instagram.com/walkingallery/" target="_blank"><img src="images/instagram.png" class="circle" /></a>
+            <a href="https://www.facebook.com/menghsinchen" target="_blank"><img src="images/facebook.png" class="circle" /></a>
         </p>
         <div class="ht-20"></div>
     </footer>
