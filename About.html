@@ -25,13 +25,21 @@
             display: none;
             visibility: hidden;
         }
+
+        .help:hover {
+            cursor: help;
+        }
     </style>
 
     <script>
         $(document).ready(function () {
             document.getElementById("year").innerHTML = new Date().getFullYear();
+
             $("#contact").click(function () {
                 $('#modalContact').modal('show');
+            });
+            $("#award").click(function () {
+                $('#modalAward').modal('show');
             });
 
             $(".zh").addClass("hide");
@@ -251,7 +259,7 @@
                             <span class="en">TSMC</span>
                             <span class="zh">台積電</span>
                         </h3>
-                        <p class="en">
+                        <p>
                             <span class="en">
                                 When talking about a Process Integration Engineer in the semiconductor industry, we think of someone who connects the customer and the foundry of manufacturing. My job is to deliver products to the customers with well-defined procedures. By self-studying programming and developed applications for internal usage, working smart is coming along with working hard.
                             </span>
@@ -260,6 +268,7 @@
                                 我們維繫良率，把控產線的順暢與品質。<br />
                                 經由自學程式語言，開發系統，提供內部分析需求，提高生產力，我們不再只是 Work Hard，更追求 Work Smart。
                             </span>
+                            <span id="award" class="material-icons help">emoji_events</span>
                         </p>
                         <div class="ht-20"></div>
                     </div>
@@ -311,7 +320,7 @@
                                         <span class="zh">定義第一個 TSMC 3D IC 先進封裝自動化製程流程。</span>
                                     </li>
                                     <li>
-                                        <span class="en">Defined bumping/assembly technology infrastructure for 3D IC roadmap. (Division Stop & Fix Award Winner)</span>
+                                        <span class="en">Defined bumping/assembly technology infrastructure for 3D IC roadmap.</span>
                                         <span class="zh">定義 3D IC bumping/assembly 技術基礎建設與展望。</span>
                                     </li>
                                     <li>
@@ -333,11 +342,11 @@
                                 </h4>
                                 <ul>
                                     <li>
-                                        <span class="en">Developed InFO along with SoC throughout N16/N10/N7/N5 technology. (Suggestion Committee Award Winner)</span>
+                                        <span class="en">Developed InFO along with SoC throughout N16/N10/N7/N5 technology.</span>
                                         <span class="zh">發展並研究用於可攜式電子產品的 InFO 技術。</span>
                                     </li>
                                     <li>
-                                        <span class="en">Saved expense cost by constructing preserving methodologies of goods. (Division Contribution Award)</span>
+                                        <span class="en">Saved expense cost by constructing preserving methodologies of goods.</span>
                                         <span class="zh">缺陷分析與電性分析，改善製程流程，降低製造成本。</span>
                                     </li>
                                     <li>
@@ -567,7 +576,7 @@
         </div>
         <hr />
     </div>
-    <!-- Modal -->
+    <!-- modalContact -->
     <div class="modal fade" id="modalContact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -587,6 +596,55 @@
                         <a href="https://www.instagram.com/walkingallery/" target="_blank">Instagram</a> |
                         <a href="https://www.facebook.com/menghsinchen" target="_blank">Facebook</a>
                     </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modalAward -->
+    <div class="modal fade" id="modalAward" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><span class="material-icons">emoji_events</span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div id="modalAward-body" class="modal-body">
+                    <!-- Carousel Starts -->
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/award-2015-contribution.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/award-2015-tradesecret.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/award-2016-contribution.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/award-2020-contribution.jpg" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/award-2020-stopandfix.jpg" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    <!-- Carousel Ends -->
                 </div>
             </div>
         </div>
